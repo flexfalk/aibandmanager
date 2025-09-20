@@ -1,17 +1,57 @@
-Venue Name,City,Contact Email,URL
-Unknown,Copenhagen,11info@vega.dkEnghavevej,https://vega.dk/en/bag-om-vega-1
-Unknown,Helsingør,anders@karosserifabrikken.dk,https://www.karosserifabrikken.dk/en/karosserifabrikken/
-Unknown,Helsingør,ChatbotChatbotcontact@festivation.comContact,https://festivation.com/best-music-festivals-helsing%C3%B8r-denmark
-Unknown,Helsingør,Uscontact@festivation.com,https://festivation.com/best-music-festivals-helsing%C3%B8r-denmark
-Unknown,Helsingør,FEstivation.comcontact@festivation.comContact,https://festivation.com/best-music-festivals-helsing%C3%B8r-denmark
-Unknown,Helsingør,billet@kuto.dk,https://kuto.dk/english/
-Unknown,Køge,info@limunt.com,https://limunt.com/en/live-music-in-coege/
-Unknown,Køge,57info@limunt.comLimunt,https://limunt.com/en/live-music-in-coege/
-Unknown,Slagelse,BorbyBORBY@Roys,https://www.bandsintown.com/c/slagelse-denmark
-Unknown,Næstved,BorbyBORBY@Roys,https://www.bandsintown.com/c/naestved-denmark
-Unknown,Næstved,info@limunt.com,https://limunt.com/en/the-best-entertainment-for-your-party-in-naestved/
-Unknown,Næstved,57info@limunt.comLimunt,https://limunt.com/en/the-best-entertainment-for-your-party-in-naestved/
-Unknown,Holbæk,info@limunt.com,https://limunt.com/en/jazzbandiholbaek/
-Unknown,Holbæk,57info@limunt.comLimunt,https://limunt.com/en/jazzbandiholbaek/
-Unknown,Lyngby,Sk@b,https://evendo.com/locations/denmark/north-zealand/landmark/templet
-Unknown,Lyngby,support@evendo.com,https://evendo.com/locations/denmark/north-zealand/landmark/templet
+Venue Name,Query,Contact Email,URL
+Spillesteder i København,spillesteder københavn,,https://www.visitcopenhagen.dk/da/copenhagen/spillesteder-i-kobenhavn-gdk586951
+KultuNaut,spillesteder københavn,,https://www.kultunaut.dk/
+VEGA,spillesteder københavn,vega@vega.dk,https://vega.dk/
+ALICE,spillesteder københavn,info@alicecph.com,https://alicecph.com/
+Spillesteder i København,spillesteder københavn,,https://da.wikipedia.org/wiki/Kategori:Spillesteder_i_K%C3%B8benhavn
+Pumpehuset,spillesteder københavn,[email protected],https://pumpehuset.dk/
+VEGA,spillesteder københavn,info@vega.dk,https://www.vega.dk/
+Loppen,spillesteder københavn,info@loppen.dk,https://loppen.dk/
+Hotel Cecil,spillesteder københavn,info@hotelcecil.dk,https://hotelcecil.dk/
+VEGA,live musik københavn,,https://www.visitcopenhagen.com/copenhagen/music-venues/vega-gdk410951
+VEGA - Musikkens Hus,live musik københavn,info@vega.dk,https://www.vega.dk/
+CPH Concerts,live musik københavn,info@cphconcerts.com,https://www.cphconcerts.com/
+Drop Inn,live musik københavn,,https://dropinn.com/
+Mojo,live musik københavn,billet@mojo.dk,https://www.mojo.dk/
+Billetto,koncerter københavn,support@billetto.com,https://billetto.dk/
+VEGA,koncerter københavn,info@vega.dk,https://www.vega.dk/
+Live Nation,koncerter københavn,info@livenation.dk,https://www.livenation.dk/
+Copenhagen Phil,koncerter københavn,copenhagenphil@copenhagenphil.dk,https://copenhagenphil.dk/
+DR Koncerthuset,koncerter københavn,drkoncerthuset@dr.dk,https://drkoncerthuset.dk/
+Royal Arena,koncerter københavn,info@royalarena.dk,https://www.royalarena.dk/
+Spillesteder i København,musiksteder københavn,,https://www.visitcopenhagen.dk/da/copenhagen/spillesteder-i-kobenhavn-gdk586951
+VEGA,musiksteder københavn,vega@vega.dk,https://vega.dk/
+KultuNaut,musiksteder københavn,,https://www.kultunaut.dk/
+ALICE,musiksteder københavn,info@alicecph.com,https://alicecph.com/
+VEGA,musiksteder københavn,,https://www.vega.dk/
+Loppen,musiksteder københavn,info@loppen.dk,https://loppen.dk/
+Pumpehuset,musiksteder københavn,[email protected],https://pumpehuset.dk/
+VEGA,musiksteder københavn,info@vega.dk,https://www.vega.dk/
+København,booking af band københavn,,https://www.findband.dk/
+Limunt,booking af band københavn,kontakt@limunt.dk,https://limunt.dk/
+Liveband til fest,booking af band københavn,info@livebandtilfest.dk,https://www.livebandtilfest.dk/
+Killtown Deathfest,booking af band københavn,killtowntourbookings@gmail.com,https://killtowndeathfest.com/
+Musikbookeriet,booking af band københavn,info@musikbookeriet.dk,https://musikbookeriet.dk/
+ProArtist,booking af band københavn,kontakt@proartist.dk,https://www.proartist.dk/
+Evenses,booking af band københavn,info@evenses.com,https://www.evenses.dk/
+Bands I København,booking af band københavn,[email protected],https://bandsikobenhavn.dk/
+Kelly & Co. Collective,Add one venue per line. Example:,info@kellyandcocollective.com,https://kellyandcocollective.com/
+Perfect Venue,Add one venue per line. Example:,hello@perfectvenue.com,https://perfectvenue.com/
+Always Yours Events,Add one venue per line. Example:,keri@alwaysyoursevents.com,https://www.alwaysyoursevents.com/
+LineUpr Blog,Add one venue per line. Example:,info@lineupr.com,https://blog.lineupr.com/
+XTIX Blog,Add one venue per line. Example:,info@xtix.com,https://xtix.com/
+VEGA,VEGA København,info@vega.dk,https://www.vega.dk/
+Vega,VEGA København,,https://da.wikipedia.org/wiki/Vega_(K%C3%B8benhavn)
+Pumpehuset,Pumpehuset København,[email protected],https://pumpehuset.dk/
+Pumpehuset,Pumpehuset København,info@pumpehuset.dk,https://www.pumpehuset.dk/
+Pumpehuset,Pumpehuset København,,https://da.wikipedia.org/wiki/Pumpehuset_(K%C3%B8benhavn)
+Byhaven Pumpehuset,Pumpehuset København,info@pumpehuset.dk,https://www.pumpehuset.dk/byhaven/
+Pumpehuset,Pumpehuset København,info@pumpehuset.dk,https://billetto.dk/venues/pumpehuset
+Loppen,Loppen København,info@loppen.dk,https://loppen.dk/
+Loppen,Loppen København,info@loppen.dk,https://www.visitcopenhagen.com/copenhagen/planning/loppen-gdk410970
+Hotel Cecil,Hotel Cecil København,info@hotelcecil.dk,https://hotelcecil.dk/
+Resident Advisor,Hotel Cecil København,info@residentadvisor.net,https://www.residentadvisor.net/
+Hotel Cecil,Hotel Cecil København,,https://www.bandsintown.com/v/hotel-cecil
+Mindtrip,Hotel Cecil København,info@mindtrip.com,www.mindtrip.com
+Hotel Cecil,Hotel Cecil København,,https://www.jambase.com/venue/hotel-cecil
+Hotel Cecil,Hotel Cecil København,,www.hotelcecil.dk
