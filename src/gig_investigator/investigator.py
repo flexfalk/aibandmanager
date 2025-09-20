@@ -14,46 +14,45 @@ from src.gig_investigator.gig_opportunity import GigOpportunity
 
 
 class GigInvestigator:
-	def get_nearby_cities(self):
+	def search_gigs_in_copenhagen(self, queries=None, num_results_per_query: int = 10):
 		"""
-		Returns a list of Danish cities within ~1 hour drive from Copenhagen.
+		Search for gig opportunities in Copenhagen using Danish queries.
+		Returns a list of (query, url) tuples.
 		"""
-		return [
-			"Copenhagen", "Roskilde", "Hillerød", "Helsingør", "Køge", "Slagelse", "Næstved", "Holbæk", "Ringsted", "Frederikssund", "Helsingborg", "Greve", "Glostrup", "Ballerup", "Lyngby", "Taastrup", "Farum", "Hørsholm", "Charlottenlund", "Dragør"
-		]
-
-	def search_gigs_in_region(self, base_query: str = "live music venue", num_results_per_city: int = 8):
-		"""
-		Search for gig opportunities in Copenhagen and nearby cities.
-		Returns a list of (city, url) tuples.
-		"""
-		cities = self.get_nearby_cities()
+		if queries is None:
+			queries = [
+				"spillesteder københavn",
+				"live musik københavn",
+				"koncerter københavn",
+				"musiksteder københavn",
+				"booking af band københavn"
+			]
 		results = []
-		for city in cities:
-			query = f"{base_query} {city} Denmark"
+		for query in queries:
 			try:
-				urls = self.search_venues(query, num_results=num_results_per_city)
+				urls = self.search_venues(query, num_results=num_results_per_query)
 				for url in urls:
-					results.append((city, url))
+					results.append((query, url))
 			except Exception as e:
-				print(f"Search failed for {city}: {e}")
+				print(f"Search failed for query '{query}': {e}")
 		return results
 
-	def investigate_and_save(self, base_query: str = "live music venue", output_file: str = "gig_opportunities.csv"):
+	def investigate_and_save(self, output_file: str = "gig_opportunities.csv"):
 		"""
-		Scour the web for possible gigs, extract info, and save to CSV.
+		Scour the web for possible gigs in Copenhagen using Danish queries, extract info, and save to CSV.
 		"""
-		city_url_pairs = self.search_gigs_in_region(base_query)
+		query_url_pairs = self.search_gigs_in_copenhagen()
 		all_gigs = []
-		for city, url in city_url_pairs:
+		for query, url in query_url_pairs:
 			gigs = self.scrape_gig_page(url)
 			for gig in gigs:
 				gig_dict = {
 					"Venue Name": gig.name,
-					"City": city,
+					"Query": query,
 					"Contact Email": gig.contact_email,
 					"URL": gig.url
 				}
+				print(gig_dict)
 				all_gigs.append(gig_dict)
 		if all_gigs:
 			print(f"Saving {len(all_gigs)} gig opportunities to {output_file}")
@@ -96,7 +95,8 @@ class GigInvestigator:
 		Returns a list of GigOpportunity objects.
 		"""
 		try:
-			response = requests.get(url)
+			headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
+			response = requests.get(url, headers=headers)
 			response.raise_for_status()
 		except Exception as e:
 			print(f"Failed to fetch {url}: {e}")
