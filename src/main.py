@@ -33,6 +33,13 @@ def dummy_band_manager():
 	return agent
 
 if __name__ == "__main__":
-	# Run the autonomous gig investigation and save results to CSV
+	import sys
 	investigator = GigInvestigator()
-	investigator.investigate_and_save()
+	if len(sys.argv) > 1 and sys.argv[1] == "clean":
+		# Only run the cleaning step
+		GigInvestigator.clean_gig_opportunities()
+	else:
+		# Run the autonomous gig investigation and save results to CSV
+		investigator.investigate_and_save()
+	# investigator.investigate_and_save()
+

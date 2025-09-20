@@ -17,6 +17,65 @@ from src.gig_investigator.gig_opportunity import GigOpportunity
 
 class GigInvestigator:
 
+	@staticmethod
+	def clean_gig_opportunities_llm(input_file: str = "gig_opportunities.csv", output_file: str = "gig_opportunities_cleaned_llm.csv"):
+		"""
+		Use an LLM to review each gig opportunity and keep only valid, relevant ones.
+		"""
+		import time
+		from langchain.llms import OpenAI
+		df = pd.read_csv(input_file)
+		before = len(df)
+		llm = OpenAI(temperature=0)
+		exclude_list = GigInvestigator().get_exclude_list()
+		exclude_str = ", ".join(exclude_list) if exclude_list else ""
+		keep_rows = []
+		print(f"[LLM CLEAN] Reviewing {before} rows with LLM...")
+		for idx, row in df.iterrows():
+			prompt = f'''
+You are an expert at evaluating gig opportunities for a semi-pro band.
+Given the following information, answer with a JSON object: {{"keep": true/false, "reason": "..."}}.
+
+Venue Name: {row.get('Venue Name','')}
+Contact Email: {row.get('Contact Email','')}
+URL: {row.get('URL','')}
+
+IMPORTANT: Ignore and do not keep any venues that are too large, not relevant, or appear in this list: {exclude_str}
+Only keep real, relevant, and attainable opportunities for a semi-pro band.
+'''
+			try:
+				response = llm(prompt)
+				import json
+				result = json.loads(response)
+				if result.get("keep"):
+					keep_rows.append(row)
+				print(f"[LLM CLEAN] Row {idx+1}: keep={result.get('keep')} reason={result.get('reason','')} ")
+			except Exception as e:
+				print(f"[LLM CLEAN] Error on row {idx+1}: {e}")
+			time.sleep(0.5)  # avoid rate limits
+		cleaned_df = pd.DataFrame(keep_rows)
+		after = len(cleaned_df)
+		print(f"[LLM CLEAN] {before-after} rows removed. {after} rows remain.")
+		cleaned_df.to_csv(output_file, index=False)
+		print(f"[LLM CLEAN] Cleaned file saved as {output_file}.")
+
+	@staticmethod
+	def clean_gig_opportunities(input_file: str = "gig_opportunities.csv", output_file: str = "gig_opportunities_cleaned.csv"):
+		"""
+		Remove redundant rows and rows missing emails from the gig opportunities CSV.
+		"""
+		print(f"[CLEAN] Loading {input_file}...")
+		df = pd.read_csv(input_file)
+		before = len(df)
+		# Drop rows with missing or empty emails
+		df = df[df["Contact Email"].notnull() & (df["Contact Email"].str.strip() != "")]
+		# Drop duplicates based on Venue Name and Contact Email
+		df = df.drop_duplicates(subset=["Venue Name", "Contact Email"])
+		after = len(df)
+		print(f"[CLEAN] {before-after} rows removed. {after} rows remain.")
+		df.to_csv(output_file, index=False)
+		print(f"[CLEAN] Cleaned file saved as {output_file}.")
+
 	def get_exclude_list(self, exclude_file: str = "exclude_list.md"):
 		"""
 		Read a list of venues or keywords to exclude from a markdown file (one per line, skip comments/empty lines).
