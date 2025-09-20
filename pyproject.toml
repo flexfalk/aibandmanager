@@ -1,0 +1,23 @@
+[project]
+name = "aibandmanager"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Sofus Konglevoll", email = "sofu0284@gmail.com"},
+]
+dependencies = [
+    "pandas",
+    "google-search-results",
+    "beautifulsoup4",
+    "python-dotenv>=1.1.1",
+    "langchain>=0.3.27",
+    "openai>=1.108.1",
+    "langchain-community>=0.3.29"
+]
+requires-python = "==3.10.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false

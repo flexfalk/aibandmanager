@@ -1,0 +1,26 @@
+# VS Code settings
+.vscode/
+
+# Python environment and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# PDM
+pdm.lock
+__pypackages__/
+
+# Environment variables
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Misc
+*.log

@@ -1,0 +1,3 @@
+pandas
+google-search-results
+beautifulsoup4
